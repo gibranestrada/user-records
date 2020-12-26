@@ -30,10 +30,11 @@
         </div>
       </nav>
     </div>
-    <div id="main" class="container text-center">
+    <div id="hero" class="container text-center">
       <h1>Search Any Email Address</h1>
       <h2><span>Start Here</span> - Look up the owner's name, photos and online profiles. See what you find!</h2>
-      <div><input class="input-email" type="text" placeholder="EMAIL" />
+      <div><input id="input-email" class="input-email" type="email" placeholder="EMAIL"/>
+        <p class="error hide">Please add a valid email address</p>
         <button type="submit" class="submit-button">GO!</button>
       </div>
       <div class="row justify-content-start lock">
@@ -49,11 +50,10 @@
   </div>
   <div class="container text-center main-content">
     <h3>Reverse Email Lookup</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.</p>
     <div class="row">
-      <!--justify-content-between -->
       <div class="col-12 col-sm-6">
         <div class="row">
           <div class="col-12 main-content-numbers">
@@ -125,12 +125,22 @@
       </div>
     </div>
   </div>
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h1>User Records</h1>
-      <p>Search for user record by entering email address below</p>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-9 text-left footer-text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat.</p>
+        </div>
+        <div class="col-12 col-sm-3 text-center footer-terms-privacy">
+          <a href="#">Terms</a><span style="color: #004A80; font-weight: bold;"> | </span><a href="#">Privacy</a>
+        </div>
+      </div>
     </div>
-  </div>
+  </footer>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
