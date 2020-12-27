@@ -23,6 +23,7 @@ $(document).ready(function () {
     "beforeend",
     PAGES.main.content(mainOptions.top[0], mainOptions.top[1], "top")
   );
+  root.insertAdjacentHTML("beforeend",PAGES.loading.content)
   let trigger = false;
   //##########   Email Input validation and Email Record GET request   ##########
   const setEvents = () => {
