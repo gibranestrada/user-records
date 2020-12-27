@@ -149,20 +149,23 @@ const noResults = `
 </div>`;
 
 const results = (data) => {
-    const formatPhoneNumber = (str) => {
-        //Filter only numbers from the input
-        let cleaned = ('' + str).replace(/\D/g, '');
-        
-        //Check if the input is of correct length
-        let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-      
-        if (match) {
-          return '(' + match[1] + ') ' + match[2] + '-' + match[3]
-        };
-        return null
-      };
-    const formated = data.phone_numbers.map(val => formatPhoneNumber(val)).reduce((acc, val) => acc + '<br/>' + val)
-    return (`<div id="results-container">
+  //formatPhoneNumber will format the numbers to (000) 000-0000
+  const formatPhoneNumber = (str) => {
+    //Filter only numbers
+    let cleaned = ("" + str).replace(/\D/g, "");
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+    if (match) {
+      return "(" + match[1] + ") " + match[2] + "-" + match[3];
+    }
+    return str;
+  };
+  const formated = data.phone_numbers
+    .map((val) => formatPhoneNumber(val))
+    .reduce((acc, val) => acc + "<br/>" + val);
+  return `<div id="results-container">
     <div class="container text-center">
       <div class="row align-items-center">
         <div class="col-12">
@@ -190,9 +193,17 @@ const results = (data) => {
                   </div>
                   <div class="col-12 col-sm-6">
                     <p class="card-info-title">Phone Numbers</p>
-                    <p class="phone-numbers">${data.phone_numbers.length ?  formated: ''}</p>
+                    <p class="phone-numbers">${
+                      data.phone_numbers.length ? formated : ""
+                    }</p>
                     <p class="card-info-title">Relatives</p>
-                    <p class="card-info-desc">${data.relatives.length ? data.relatives.reduce((acc, val) => acc + '<br/>' + val) : ''}</p>
+                    <p class="card-info-desc">${
+                      data.relatives.length
+                        ? data.relatives.reduce(
+                            (acc, val) => acc + "<br/>" + val
+                          )
+                        : ""
+                    }</p>
                   </div>
                 </div>
               </div>
@@ -201,8 +212,8 @@ const results = (data) => {
         </div>
       </div>
     </div>
-  </div>`)
-}
+  </div>`;
+};
 
 const mainOptions = {
   top: [
