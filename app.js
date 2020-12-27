@@ -1,5 +1,6 @@
 "use strict";
 $(document).ready(function () {
+  
   // Website main pages
   let PAGES = {
     main: {

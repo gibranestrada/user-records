@@ -1,4 +1,5 @@
 const main = (title, text, position) => {
+  
   return `<div class="heroContainer">
   <div id="hero">
     <div class="container text-center">
