@@ -1,5 +1,39 @@
+const nav = `<div id="navContainer">
+<div class="container">
+  <nav class="navbar">
+    <a class="navbar-brand logo-icon" href="#home">
+      <img src="assets/SVGs/Logo.svg" loading="lazy"
+        alt="Logo is a rocket image that is upright tilting to the right with text next to it saying company logo" />
+    </a>
+    <div>
+      <a class="navbar-brand search-icon" href="#">
+        <img src="assets/SVGs/icn_search.svg" loading="lazy" alt="Search Icon - Magnifying glass" />
+      </a>
+      <a class="navbar-brand account-icon" href="#">
+        <img src="assets/SVGs/icn_person.svg" loading="lazy" alt="Account Icon - Round shape of a human body" />
+      </a>
+    </div>
+  </nav>
+</div>
+</div>`;
+const footer = `<footer>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 text-left footer-text">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div>
+    <div class="col-sm-12 col-md-2 text-center footer-terms-privacy">
+      <a href="#">Terms</a><span style="color: #004a80; font-weight: bold"> | </span><a href="#">Privacy</a>
+    </div>
+  </div>
+</div>
+</footer>`;
 const main = (title, text, position) => {
-  
   return `<div class="heroContainer">
   <div id="hero">
     <div class="container text-center">

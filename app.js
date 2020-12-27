@@ -1,6 +1,6 @@
 "use strict";
 $(document).ready(function () {
-  
+
   // Website main pages
   let PAGES = {
     main: {
@@ -20,12 +20,16 @@ $(document).ready(function () {
     },
   };
   // Dynamically add html to the DOM
+  let body = document.querySelector("body")
+  body.insertAdjacentHTML("beforebegin", nav);
+  body.insertAdjacentHTML("beforeend", footer);
+  
   let root = document.querySelector("#root");
   root.insertAdjacentHTML(
     "beforeend",
     PAGES.main.content(mainOptions.top[0], mainOptions.top[1], "top")
   );
-  root.insertAdjacentHTML("beforeend", PAGES.loading.content);
+  
   let trigger = false;
 
   //#########   Navigate by using windows.location.hash. Ex. #search ##########//
