@@ -5,10 +5,14 @@ body{
     max-width: 1010px;
 }
 #hero{
-    padding: 15px;
+    padding: 50px 15px 70px;
     margin-top: 0px;
+    background-color: #004A80;
 }
-.navContainer,.heroContainer{
+.heroContainer{
+    width: 100%;
+}
+.navContainer{
     background-color: #004A80;
 }
 nav{
@@ -27,6 +31,7 @@ h2{
     color: #FFFFFF;
     font-size: 1.5em;
     font-weight: 350;
+    padding: 10px;
 }
 h2 span {
     font-weight: 600;
@@ -36,14 +41,17 @@ h2 span {
     background-image: linear-gradient(225deg, #F2DA56 0%, #F6BC25 100%);
     box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
     border-radius: 6px;
-    height: 50px;
+    height: 70px;
     font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    font-size: 22px;
+    font-weight: 600;
+    font-family: Helvetica Neue, Arial;
+    font-size: 24px;
     color: #004A80;
     letter-spacing: 0.93px;
     text-align: center;
     border-width: 0px;
+    width: 100%;
+    margin-top: 18px;
 }
 .submit-button:hover{
     background: #F2DA56;
@@ -65,6 +73,12 @@ h2 span {
     height: 50px;
     padding-left: 12px;
     font-size: 20px;
+}
+.lock img{
+    margin-left: -15px;
+}
+.lock{
+    margin-top: 20px;
 }
 .error{
     text-align: left;
@@ -88,8 +102,12 @@ h2 span {
     border-radius: 3px;
     margin-bottom: 0;
 }
+#input-email{
+    width: 100%;
+    height: 70px;
+}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    font-size: 16px;
+    font-size: 18px;
     color: #9B9B9B;
     letter-spacing: 2px;
     line-height: 18px;
@@ -98,14 +116,14 @@ h2 span {
   }
   
   :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-size: 16px;
+    font-size: 18px;
     color: #9B9B9B;
     letter-spacing: 2px;
     line-height: 18px;
   }
   
   ::-ms-input-placeholder { /* Microsoft Edge */
-    font-size: 16px;
+    font-size: 18px;
     color: #9B9B9B;
     letter-spacing: 2px;
     line-height: 18px;
@@ -117,15 +135,24 @@ h2 span {
     font-weight: bold;
     text-align: left;
     line-height: 20px;
+    margin-left: -30px;
   }
   .main-content{
-    background-image: linear-gradient(0deg, #E6E6E6 0%, #FFFFFF 100%);
-    max-width: 980px;
+    background-image: linear-gradient(0deg, #E6E6E6 0%, #FFFFFF);
+    padding: 40px 0px;
   }
   h3{
     color: #004A80;
     letter-spacing: 0;
     font-weight: bold;
+    font-size: 52px;
+    padding-bottom: 15px;
+  }
+  .lookup-description{
+    font-size: 22px;
+    color: #4A4A4A;
+    line-height: 30px;
+    padding-bottom: 40px;
   }
   .numbers{
     background: #004A80;
@@ -134,24 +161,32 @@ h2 span {
     text-align: center;
     border-radius: 50%;
     font-weight: bold;
+    height: 90px;
+    width: 90px;
+    font-size: 48px;
+    line-height: 90px;
   }
   .main-title span{
     color: #004A80;
     letter-spacing: 0;
     font-weight: bold;
+    font-size: 22px;
   }
   .main-title p{
     color: #000000;
     letter-spacing: 0;
+    font-size: 18px;
   }
   footer{
     color: #999999;
     letter-spacing: 0;
+    padding-top: 15px;
   }
   .footer-terms-privacy a{
     color: #004A80;
     font-weight: bold;
-    letter-spacing: 0;
+    padding-top: 30px;
+    padding-bottom: 5px;
 }
 #loading{
     background: #F8F8F8;
@@ -164,6 +199,11 @@ h2 span {
     color: #004A80;
     font-weight: bold;
 }
+.results{
+    font-size: 38px;
+    color: #004A80;
+    font-weight: bold;
+}
 #results-none-container{
     background:#F8F8F8;
 }
@@ -172,7 +212,57 @@ h2 span {
     color: #4A4A4A;
     line-height: 28px;
 }
-
+.results-text{
+    font-size: 18px;
+    color: #4A4A4A;
+    line-height: 28px;
+}
+#results-container{
+    background:#F8F8F8;
+    padding: 30px;
+}
+.card{
+    border-radius: 30px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    padding: 30px;
+}
+.img-background{
+    background: #004A80;
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    
+}
+.img-background img{
+    height: 46px;
+    width: 40px;
+    margin-top: 18px;
+}
+.card-title p:first-child{
+    font-size: 32px;
+    color: #004A80;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.card-title p:nth-child(2){
+    font-size: 18px;
+    line-height: 26px;
+}
+.card-info-title{
+    font-size: 22px;
+    color: #004A80;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.card-info-desc{
+    font-size: 18px;
+    line-height: 26px;
+}
+.phone-numbers{
+    font-size: 16px;
+    color: #004A80;
+}
 @media (max-width: 320px) {
     h1 {
       font-size: calc(1.65rem + 3.3vw);
@@ -255,5 +345,16 @@ h2 span {
     }
     .loader p {
         margin-top: 16px;
+    }
+    .results-text{
+        text-align: left;
+    }
+    #results-container{
+        padding: 0px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .heroContainer{
+        padding-top: 25px;
     }
   }

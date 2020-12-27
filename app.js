@@ -8,6 +8,9 @@ $(document).ready(function () {
     loading: {
       content: loading, //imported from pagesContent.js
     },
+    results: {
+      content: results,
+    },
     noResults: {
       content: noResults,
     },
@@ -36,7 +39,7 @@ $(document).ready(function () {
       const email = $("#input-email");
       var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       const bool = regex.test(email.val());
-      console.log(bool, email.val());
+    
       if (!bool) {
         email.removeClass("input-email").addClass("wrong-email");
         $(".error").removeClass("hide");
@@ -44,8 +47,6 @@ $(document).ready(function () {
       if (bool) {
         email.removeClass("wrong-email").addClass("input-email");
         $(".error").addClass("hide");
-        // $("#loading").removeClass("hide");
-        // $(".heroContainer").addClass("hide");
         window.location.hash = "search";
         trigger = true;
         emailGetRequest(email.val());
@@ -53,19 +54,19 @@ $(document).ready(function () {
     };
   };
   setEvents();
+  let emailData;
   const emailGetRequest = async (email) => {
     await fetch(
       "https://ltv-data-api.herokuapp.com/api/v1/records.json?email=" + email
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (Object.keys(data).length) {
-          $(".heroContainer").removeClass("hide");
-          $("#loading").addClass("hide");
+          emailData = data;
+          window.location.hash = "results";
         }
         if (!Object.keys(data).length) {
-          // $(".heroContainer").removeClass("hide");
-          // $("#loading").addClass("hide");
           window.location.hash = "no-results";
         }
       })
@@ -78,8 +79,6 @@ $(document).ready(function () {
   let path;
   const navigate = () => {
     path = location.hash.substr(1).toLowerCase().split("/");
-    let currentPage = path[0];
-    console.log(currentPage);
     let div = document.getElementById("root");
     while (div.firstChild && div.removeChild(div.firstChild));
     if (path[0] === "home") {
@@ -106,11 +105,20 @@ $(document).ready(function () {
         )
       );
     } else if (path[0] === "results") {
+      root.insertAdjacentHTML("beforeend", PAGES.results.content(emailData));
+      root.insertAdjacentHTML(
+        "beforeend",
+        PAGES.main.content(
+          mainOptions.bottom[0],
+          mainOptions.bottom[1],
+          "bottom"
+        )
+      );
     } else {
       root.insertAdjacentHTML("beforeend", PAGES.page404.content);
     }
     setEvents();
   };
-  navigate();
+  //navigate();
   window.onhashchange = navigate;
 });
